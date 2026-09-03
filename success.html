@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A1F44">
+<meta name="color-scheme" content="light">
+<meta name="description" content="E-Ticket Picnic Music Festival COMMVAGANZA 10.0 - Sabtu, 12 September 2026 di Bandar Lampung.">
+<meta property="og:title" content="E-Ticket - COMMVAGANZA 10.0 | Bandar Lampung 2026">
+<meta property="og:description" content="E-Ticket resmi Anda. Tunjukkan QR Code saat check-in. Sabtu, 12 September 2026 di Bandar Lampung.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --blue:#3561FF;--blue-deep:#2147DB;
+  --navy:#0E2C5A;--navy-deep:#0A1F44;
+  --gold:#D4AF37;--gold-light:#F4D98A;--gold-bg:#FFF8E1;
+  --text:#172235;--muted:#7D8797;--line:#ECE6D8;
+  --red:#C62828;--red-bright:#DC2626;
+  --page-bg:#F2F3F5;
+  --ease:cubic-bezier(.4,0,.2,1);--ease-bounce:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box}
+::selection{background:rgba(53,97,255,.16);color:var(--blue-deep)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#E9ECF1}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#C7D2FE,#A5B4FC);border-radius:99px;border:2px solid #E9ECF1}
+::-webkit-scrollbar-thumb:hover{background:#8DA6F9}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;padding:28px 14px 40px;
+  font-family:'Poppins',Arial,sans-serif;
+  background:
+    radial-gradient(circle at 50% -5%,rgba(212,175,55,.16),transparent 32%),
+    radial-gradient(900px 460px at 50% -10%,rgba(53,97,255,.09),transparent 60%),
+    var(--page-bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;
+  -webkit-tap-highlight-color:transparent
+}
+body::before,body::after{content:'';position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+body::before{width:400px;height:400px;background:rgba(53,97,255,.08);top:-150px;left:-150px;animation:drift1 16s ease-in-out infinite alternate}
+body::after{width:360px;height:360px;background:rgba(212,175,55,.12);bottom:-150px;right:-150px;animation:drift2 20s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(70px,50px) scale(1.12)}}
+@keyframes drift2{to{transform:translate(-60px,-50px) scale(1.08)}}
+
+.ticket{
+  width:100%;max-width:430px;margin:auto;position:relative;z-index:1;
+  background:#fff;border-radius:22px;overflow:hidden;
+  box-shadow:0 24px 60px rgba(10,31,68,.16),0 4px 14px rgba(10,31,68,.06);
+  border:1px solid rgba(255,255,255,.7);
+  animation:ticketIn .6s var(--ease) both
+}
+@keyframes ticketIn{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+
+.header{
+  padding:28px 22px 24px;text-align:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(420px 190px at 85% -30%,rgba(53,97,255,.4),transparent 62%),
+    radial-gradient(300px 170px at -8% 115%,rgba(212,175,55,.22),transparent 60%),
+    linear-gradient(150deg,var(--navy) 0%,#123072 55%,var(--navy-deep) 100%);
+  color:#fff
+}
+.header::before{content:'';position:absolute;top:0;left:9%;right:9%;height:2px;border-radius:99px;background:linear-gradient(90deg,transparent,rgba(244,217,138,.6),transparent)}
+.header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%)}
+.header-eyebrow{position:relative;font-size:9px;font-weight:800;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-light);opacity:.9;margin-bottom:8px}
+.header h1{margin:0;font-size:27px;letter-spacing:1.5px;font-weight:900;position:relative;background:linear-gradient(180deg,#fff 25%,#C7D2FE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 3px 10px rgba(0,0,0,.3))}
+.header p{margin:8px 0 0;opacity:.85;font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;position:relative}
+.admit-chip{
+  position:absolute;top:16px;right:-34px;transform:rotate(38deg);
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#5C4405;
+  font-size:9px;font-weight:900;letter-spacing:.16em;padding:6px 40px;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);z-index:2
+}
+
+.perforation{position:relative;height:0;border-top:2px dashed #E3E7EE;margin:0 0}
+.perforation::before,.perforation::after{
+  content:'';position:absolute;top:-13px;width:26px;height:26px;border-radius:50%;
+  background:var(--page-bg);border:1px solid rgba(10,31,68,.05)
+}
+.perforation::before{left:-14px}
+.perforation::after{right:-14px}
+
+.body{padding:24px 22px;position:relative}
+.body::before{
+  content:'TICKET';position:absolute;right:-8px;bottom:-10px;
+  font-size:58px;font-weight:900;letter-spacing:2px;line-height:1;
+  color:transparent;-webkit-text-stroke:1px rgba(53,97,255,.06);
+  transform:rotate(-6deg);pointer-events:none;user-select:none
+}
+
+.status{text-align:center;margin-bottom:20px;font-size:14px;padding:14px 16px;border-radius:14px;font-weight:600}
+.status.loading{color:#555;background:#F5F7FA;border:1px solid #E6E9EF}
+.status.loading::before{
+  content:'';display:inline-block;width:16px;height:16px;margin-right:10px;vertical-align:-3px;
+  border:2.5px solid rgba(53,97,255,.15);border-top-color:var(--blue);border-radius:50%;
+  animation:spin .8s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status.error{color:var(--red);font-weight:700;background:#FEF2F2;border:1px solid #FECACA}
+.status.error::before{content:'\f071';font-family:'Font Awesome 6 Free';font-weight:900;margin-right:9px}
+
+#ticketContent:not(.hidden){animation:contentIn .55s var(--ease) both}
+@keyframes contentIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.info{display:grid;gap:12px;position:relative;z-index:1}
+.row{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  border-bottom:1px dashed #E8EBF0;padding-bottom:11px;
+  transition:transform .25s var(--ease)
+}
+.row:hover{transform:translateX(3px)}
+.row:last-child{border-bottom:none;padding-bottom:0}
+.label{color:var(--muted);font-size:12px;font-weight:600;display:flex;align-items:center;gap:9px}
+.label i{
+  width:30px;height:30px;border-radius:9px;flex:none;
+  background:linear-gradient(135deg,#EEF3FF,#E3EBFF);color:var(--blue);
+  display:inline-flex;align-items:center;justify-content:center;font-size:12px
+}
+.value{text-align:right;font-weight:700;font-size:14px;word-break:break-word}
+
+.ticket-code{
+  display:table;margin:22px auto 12px;
+  font-family:'Courier New',monospace;font-size:19px;font-weight:800;letter-spacing:1.5px;
+  color:#8A6B25;background:linear-gradient(135deg,var(--gold-bg),#FFEDB8);
+  border:1px solid #EAD9A9;padding:10px 24px;border-radius:12px;
+  box-shadow:0 4px 14px rgba(212,175,55,.18),inset 0 1px 0 rgba(255,255,255,.8)
+}
+.qr-wrap{display:flex;justify-content:center;padding:16px 0 10px}
+.qr-frame{
+  position:relative;display:inline-block;padding:16px;border-radius:20px;
+  background:
+    radial-gradient(240px 120px at 50% 0%,rgba(53,97,255,.22),transparent 65%),
+    linear-gradient(150deg,var(--navy) 0%,#123072 55%,var(--navy-deep) 100%);
+  border:1px solid rgba(53,97,255,.4);
+  box-shadow:0 16px 36px rgba(8,22,64,.4)
+}
+.qr-frame::before{content:'';position:absolute;inset:7px;border:1px dashed rgba(255,255,255,.2);border-radius:14px;pointer-events:none}
+.qr-frame::after{
+  content:'SCAN ME';position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#5C4405;
+  font-size:8.5px;font-weight:900;letter-spacing:.2em;padding:4px 14px;border-radius:999px;
+  box-shadow:0 4px 10px rgba(0,0,0,.28);z-index:2;white-space:nowrap
+}
+#qrcode{padding:10px;background:#fff;border-radius:12px;position:relative;z-index:1}
+#qrcode img,#qrcode canvas{display:block;width:200px!important;height:200px!important}
+.hint{text-align:center;color:var(--muted);font-size:12px;line-height:1.6;margin:6px 0 0;font-weight:500}
+.hint i{color:var(--blue);margin-right:5px}
+
+.footer{
+  padding:15px 20px 20px;text-align:center;color:#9AA3B2;font-size:10.5px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;
+  border-top:1px solid #F0F2F6;background:linear-gradient(180deg,#fff,#FAFBFD)
+}
+.footer i{color:var(--gold);margin:0 7px;font-size:8px;vertical-align:1px}
+
+.hidden{display:none!important}
+
+@media(max-width:380px){
+  body{padding:18px 10px 30px}
+  .header h1{font-size:23px}
+  .body{padding:20px 16px}
+  .value{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+  body::before,body::after{display:none}
+}
+@media print{
+  body{background:#fff;padding:0}
+  body::before,body::after{display:none}
+  .ticket{box-shadow:none;border:1px solid #ddd;animation:none}
+}
+</style>
+</head>
+<body>
+<main class="ticket">
+<header class="header">
+  <span class="admit-chip" aria-hidden="true">ADMIT ONE</span>
+  <div class="header-eyebrow">Picnic Music Festival</div>
+  <h1>COMMVAGANZA</h1>
+  <p>E-Ticket</p>
+</header>
+<div class="perforation" aria-hidden="true"></div>
+<section class="body">
+<div id="status" class="status loading">Memuat tiket...</div>
+<div id="ticketContent" class="hidden">
+<div class="info">
+<div class="row"><span class="label"><i class="fa-solid fa-user" aria-hidden="true"></i>Nama</span><span id="name" class="value">-</span></div>
+<div class="row"><span class="label"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>Tanggal</span><span id="date" class="value">-</span></div>
+<div class="row"><span class="label"><i class="fa-solid fa-clock" aria-hidden="true"></i>Waktu</span><span id="time" class="value">-</span></div>
+<div class="row"><span class="label"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Lokasi</span><span id="location" class="value">-</span></div>
+</div>
+<div id="ticketCode" class="ticket-code">-</div>
+<div class="qr-wrap">
+<div class="qr-frame">
+<div id="qrcode"></div>
+</div>
+</div>
+<p class="hint"><i class="fa-solid fa-qrcode" aria-hidden="true"></i>Tunjukkan QR Code ini kepada petugas saat check-in.</p>
+</div>
+</section>
+<footer class="footer">COMMVAGANZA <i class="fa-solid fa-ticket" aria-hidden="true"></i> E-Ticket</footer>
+</main>
+<script>
+const db=window.supabase.createClient("https://uhjkhptfdxfamgnpuwpg.supabase.co","sb_publishable_4kUpyQSEX7IeHHTbAfaliQ_Em_ng8Ez");
+const $=id=>document.getElementById(id);
+function getTicketCode(){
+ const p=new URLSearchParams(location.search);
+ const q=p.get("ticket")||p.get("ticket_code")||p.get("code")||p.get("id");
+ if(q&&q.trim()) return q.trim();
+ return "";
+}
+function errorMsg(m){$("status").className="status error";$("status").textContent=m;$("ticketContent").classList.add("hidden");}
+async function loadTicket(){
+ const code=getTicketCode();
+ if(!code){errorMsg("Nomor tiket tidak ditemukan.");return;}
+ try{
+  const {data,error}=await db.rpc("get_public_ticket",{p_ticket_code:code});
+  if(error){console.error(error);errorMsg("Tiket tidak ditemukan atau link tidak valid.");return;}
+  if(!data||!data.length){errorMsg("Tiket tidak ditemukan atau link tidak valid.");return;}
+  const t=data[0], finalCode=t.ticket_code||code;
+  $("name").textContent=t.name||"-";$("date").textContent=t.event_date||"-";$("time").textContent=t.event_time||"-";$("location").textContent=t.location||"-";$("ticketCode").textContent=finalCode;
+  $("qrcode").innerHTML="";
+  new QRCode($("qrcode"),{text:finalCode,width:200,height:200,correctLevel:QRCode.CorrectLevel.H});
+  $("status").classList.add("hidden");$("ticketContent").classList.remove("hidden");
+ }catch(e){console.error(e);errorMsg("Terjadi kesalahan saat memuat E-Ticket.");}
+}
+loadTicket();
+</script>
+</body>
+</html>
