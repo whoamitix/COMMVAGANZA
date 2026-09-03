@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Pilih tiket untuk Picnic Music Festival COMMVAGANZA 10.0. Dapatkan tiket terbaikmu sebelum habis!">
+<meta name="theme-color" content="#4f46e5">
+<meta property="og:title" content="Pilih Tiket - COMMVAGANZA 10.0">
+<meta property="og:description" content="Dapatkan tiket terbaikmu sebelum habis!">
+<meta property="og:type" content="website">
+<title>Pilih Tiket - COMMVAGANZA 10.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎫</text></svg>">
+<style>
+:root{
+  --blue:#4f46e5;--blue-deep:#3730a3;--violet:#7c3aed;--blue-light:#eef2ff;
+  --ink:#1e1b4b;--ink-mid:#312e81;
+  --text:#0f172a;--text-soft:#475569;--muted:#94a3b8;--border:#e2e8f0;
+  --bg:#f8fafc;--card:#ffffff;
+  --red:#ef4444;--red-deep:#b91c1c;--green:#10b981;--green-deep:#059669;--amber:#f59e0b;--amber-hi:#fbbf24;
+  --shadow-sm:0 1px 2px rgba(15,23,42,.04),0 1px 3px rgba(15,23,42,.06);
+  --shadow-md:0 4px 12px rgba(15,23,42,.06),0 2px 4px rgba(15,23,42,.04);
+  --shadow-lg:0 12px 32px rgba(79,70,229,.12),0 4px 12px rgba(15,23,42,.06);
+  --shadow-xl:0 24px 48px rgba(79,70,229,.18),0 8px 20px rgba(15,23,42,.08);
+  --radius:18px;--ease:cubic-bezier(.4,0,.2,1);--ease-bounce:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+::selection{background:rgba(79,70,229,.16);color:var(--blue-deep)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#f1f5f9}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#c7d2fe,#a5b4fc);border-radius:99px;border:2px solid #f1f5f9}
+::-webkit-scrollbar-thumb:hover{background:#818cf8}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+html,body{background:radial-gradient(1200px 600px at 50% -10%,rgba(99,102,241,.08),transparent 60%),radial-gradient(800px 400px at 100% 100%,rgba(245,158,11,.06),transparent 60%),#f5f7fb;color:var(--text);font-family:'Plus Jakarta Sans',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+body{min-height:100vh;overflow-x:hidden}
+body::before,body::after{content:'';position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;z-index:0}
+body::before{width:440px;height:440px;background:rgba(99,102,241,.14);top:-140px;left:-140px;animation:drift1 16s ease-in-out infinite alternate}
+body::after{width:400px;height:400px;background:rgba(245,158,11,.1);bottom:-140px;right:-140px;animation:drift2 20s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(70px,50px) scale(1.12)}}
+@keyframes drift2{to{transform:translate(-60px,-50px) scale(1.08)}}
+
+.app{width:100%;max-width:920px;margin:0 auto;background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);min-height:100vh;padding-bottom:170px;position:relative;z-index:1;box-shadow:0 0 80px rgba(79,70,229,.06)}
+
+.topbar{height:88px;display:flex;align-items:center;gap:16px;padding:0 38px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(226,232,240,.6)}
+.back{border:0;background:linear-gradient(135deg,#f1f5f9,#e2e8f0);line-height:1;cursor:pointer;color:var(--text);padding:0;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;transition:all .25s var(--ease-bounce);box-shadow:var(--shadow-sm)}
+.back:hover{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;transform:translateY(-2px) scale(1.05);box-shadow:0 8px 20px rgba(79,70,229,.35)}
+.back:active{transform:translateY(0) scale(.96)}
+.back:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.topbar h1{font-size:30px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,var(--text) 0%,var(--blue-deep) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.ver-chip{margin-left:auto;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;font-size:11px;font-weight:800;padding:7px 14px;border-radius:999px;letter-spacing:.08em;box-shadow:0 6px 14px rgba(79,70,229,.3)}
+
+.fomo-banner{position:sticky;top:88px;z-index:15;background:linear-gradient(90deg,var(--red-deep),var(--red),var(--red-deep));background-size:200% 100%;animation:fomoBgShift 3s infinite linear;color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:14px;box-shadow:0 4px 20px rgba(220,38,38,.35);overflow:hidden}
+.fomo-shine{position:absolute;top:0;left:-50%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);animation:fomoShine 2.5s infinite}
+@keyframes fomoShine{0%{left:-50%}100%{left:150%}}
+.fomo-text{position:relative;text-shadow:0 1px 3px rgba(0,0,0,.3);animation:fomoPulse 1.5s infinite;text-transform:uppercase;letter-spacing:.5px}
+@keyframes fomoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.fomo-icon{font-size:16px;display:inline-block;animation:fomoIconBounce 1s infinite ease-in-out}
+@keyframes fomoIconBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px) rotate(-5deg)}}
+@keyframes fomoBgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.coupon{margin:20px 38px -4px;padding:12px 18px;font-size:13px;color:var(--text-soft);display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed #c7d2fe;border-radius:14px;box-shadow:var(--shadow-sm)}
+.coupon svg{width:16px;height:16px;color:var(--blue);flex:none}
+.coupon-link{color:var(--blue);font-weight:700;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s var(--ease)}
+.coupon-link:hover{border-bottom-color:var(--blue)}
+
+.hero-pass{margin:20px 38px 6px;position:relative;border-radius:22px;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 40%,#4338ca 78%,#4f46e5 100%);color:#fff;padding:30px 28px 0;overflow:hidden;box-shadow:0 24px 48px rgba(49,46,129,.35);animation:heroIn .6s var(--ease) both}
+@keyframes heroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero-pass::before{content:'';position:absolute;inset:0;background:radial-gradient(600px 220px at 85% -20%,rgba(124,58,237,.4),transparent 60%),radial-gradient(420px 220px at -5% 115%,rgba(245,158,11,.18),transparent 60%);pointer-events:none}
+.hero-eyebrow{position:relative;font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:#a5b4fc;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';width:26px;height:2px;border-radius:99px;background:linear-gradient(90deg,var(--amber),transparent)}
+
+.mega-wrap{position:relative;margin-top:14px;text-align:left}
+.mega{font-family:'Archivo Black',sans-serif;font-size:clamp(54px,14vw,104px);line-height:.92;letter-spacing:-.015em;display:inline-block;background:linear-gradient(90deg,#ffffff 0%,#c7d2fe 30%,var(--amber-hi) 55%,#ffffff 80%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:megaFlow 3.5s linear infinite,megaGlow 2.2s ease-in-out infinite}
+@keyframes megaFlow{to{background-position:300% center}}
+@keyframes megaGlow{0%,100%{filter:drop-shadow(0 6px 22px rgba(99,102,241,.5)) drop-shadow(0 0 14px rgba(251,191,36,.25))}50%{filter:drop-shadow(0 6px 30px rgba(251,191,36,.65)) drop-shadow(0 0 26px rgba(251,191,36,.45))}}
+.mega-wrap::before,.mega-wrap::after{content:'✦';position:absolute;font-size:clamp(16px,3.4vw,26px);color:var(--amber-hi);text-shadow:0 0 14px rgba(251,191,36,.8);z-index:3;animation:sparkle 1.6s ease-in-out infinite}
+.mega-wrap::before{top:-16px;right:4%}
+.mega-wrap::after{bottom:-14px;left:1%;animation-delay:.8s}
+@keyframes sparkle{0%,100%{opacity:.25;transform:scale(.7) rotate(0deg)}50%{opacity:1;transform:scale(1.25) rotate(20deg)}}
+
+.slip-chip{position:absolute;top:50%;left:54%;transform:translate(-50%,-50%) rotate(-9deg);background:linear-gradient(135deg,var(--amber) 0%,var(--amber-hi) 100%);color:var(--ink);font-weight:900;font-size:clamp(12px,3.2vw,19px);letter-spacing:.1em;padding:12px 22px;border-radius:12px;border:3px solid rgba(255,255,255,.55);box-shadow:0 0 0 5px rgba(251,191,36,.28),0 14px 30px rgba(0,0,0,.45),0 0 40px rgba(245,158,11,.55);white-space:nowrap;z-index:2;animation:chipWiggle 2.6s ease-in-out infinite}
+@keyframes chipWiggle{0%,100%{transform:translate(-50%,-50%) rotate(-9deg)}50%{transform:translate(-50%,-50%) rotate(-4deg) scale(1.07)}}
+
+.hero-row{position:relative;margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.price-burst{display:inline-flex;flex-direction:column;align-items:center;line-height:1;background:linear-gradient(135deg,var(--amber),#f97316);color:var(--ink);padding:9px 16px;border-radius:12px;transform:rotate(-2.5deg);border:2px solid rgba(255,255,255,.45);box-shadow:0 0 0 4px rgba(251,191,36,.22),0 10px 24px rgba(0,0,0,.35),0 0 28px rgba(245,158,11,.5);animation:burstBeat 2s ease-in-out infinite}
+@keyframes burstBeat{0%,100%{transform:rotate(-2.5deg) scale(1)}50%{transform:rotate(-1deg) scale(1.05)}}
+.price-burst b{font-family:'Archivo Black',sans-serif;font-size:clamp(16px,3.6vw,22px);letter-spacing:-.01em}
+.price-burst small{font-size:9px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-top:2px;opacity:.85}
+.hero-meta{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c7d2fe;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero-meta .dot{color:var(--amber)}
+
+.barcode{position:relative;height:30px;margin-top:20px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.85) 0 2px,transparent 2px 5px,rgba(255,255,255,.85) 5px 6px,transparent 6px 11px,rgba(255,255,255,.85) 11px 14px,transparent 14px 17px);opacity:.45;border-radius:4px}
+.stub-cut{position:relative;height:0;border-top:2px dashed rgba(255,255,255,.28);margin-top:18px}
+.stub-cut::before,.stub-cut::after{content:'';position:absolute;top:-12px;width:24px;height:24px;border-radius:50%;background:#fbfcff}
+.stub-cut::before{left:-39px}
+.stub-cut::after{right:-39px}
+.ticker{position:relative;overflow:hidden;padding:13px 0}
+.ticker-track{display:flex;width:max-content;animation:tickerMove 16s linear infinite}
+.ticker-group{display:flex;align-items:center;gap:26px;padding-right:26px;flex:none}
+.ticker-group span{font-size:11px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.75);white-space:nowrap}
+.ticker-group .sep{color:var(--amber-hi);letter-spacing:0}
+@keyframes tickerMove{to{transform:translateX(-50%)}}
+
+.info-box{margin:22px 38px 0;padding:14px 16px;background:linear-gradient(135deg,var(--blue-light),#fff);border:1px solid #c7d2fe;border-left:4px solid var(--blue);border-radius:14px;display:flex;align-items:center;gap:12px;font-size:13px;line-height:1.5;font-weight:600;color:var(--text-soft);box-shadow:var(--shadow-sm)}
+.info-icon{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;color:var(--blue);box-shadow:var(--shadow-sm);flex:none;transition:transform .3s var(--ease-bounce)}
+.info-box:hover .info-icon{transform:scale(1.1) rotate(-6deg)}
+.info-icon svg{width:18px;height:18px}
+
+.ticket-zone{position:relative;margin-top:14px;padding:0 38px 12px;overflow:hidden}
+.ghost{position:absolute;top:-4px;left:50%;transform:translateX(-50%) rotate(-2deg);font-family:'Archivo Black',sans-serif;font-size:clamp(84px,20vw,150px);line-height:1;color:rgba(245,158,11,.05);-webkit-text-stroke:1.5px rgba(245,158,11,.13);white-space:nowrap;z-index:0;pointer-events:none;user-select:none;animation:ghostBreath 5s ease-in-out infinite}
+@keyframes ghostBreath{0%,100%{opacity:.6}50%{opacity:1}}
+.ticket-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:18px}
+
+.ticket-card{background:var(--card);border:2px solid var(--border);border-radius:var(--radius);padding:20px 22px;position:relative;transition:all .3s var(--ease);box-shadow:var(--shadow-sm)}
+.ticket-card>*{position:relative;z-index:1}
+.ticket-card.sold-out{background:#f8fafc;border-style:dashed;border-color:#94a3b8;opacity:.75}
+.ticket-card.sold-out:hover{opacity:.85}
+.ticket-card.sold-out .ticket-info h3{color:#64748b}
+.ticket-card.active{border:2.5px solid var(--blue);box-shadow:0 8px 24px rgba(79,70,229,.18);overflow:hidden}
+.ticket-card.active:hover{box-shadow:var(--shadow-xl)}
+.ticket-card.active::before{content:'TICKET';position:absolute;right:-10px;bottom:-16px;font-family:'Archivo Black',sans-serif;font-size:62px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(79,70,229,.09);transform:rotate(-6deg);pointer-events:none;z-index:0}
+.ticket-card.active::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s var(--ease);pointer-events:none;z-index:2}
+.ticket-card.active:hover::after{left:140%}
+
+.ticket-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.ticket-info h3{font-size:17px;font-weight:800;margin-bottom:5px;letter-spacing:-.01em}
+.ticket-price{font-size:15px;font-weight:700;color:var(--blue-deep)}
+.ticket-card.active .ticket-price{display:inline-flex;flex-direction:column;align-items:center;line-height:1;background:linear-gradient(135deg,var(--amber),#f97316);color:var(--ink);padding:9px 15px;border-radius:12px;transform:rotate(-2deg);border:2px solid rgba(255,255,255,.5);box-shadow:0 0 0 3px rgba(251,191,36,.2),0 10px 22px rgba(245,158,11,.45),0 0 24px rgba(245,158,11,.4);animation:burstBeat 2s ease-in-out infinite;margin-top:2px}
+.ticket-card.active .ticket-price b{font-family:'Archivo Black',sans-serif;font-size:21px}
+.ticket-card.active .ticket-price small{font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-top:3px;opacity:.85}
+
+.status-badge{padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;flex:none;display:inline-flex;align-items:center;gap:6px}
+.status-sold{background:#fee2e2;color:var(--red)}
+.status-available{background:linear-gradient(135deg,var(--green),var(--green-deep));color:#fff;font-size:13px;font-weight:800;padding:9px 18px;letter-spacing:.08em;box-shadow:0 0 0 5px rgba(16,185,129,.14),0 10px 24px rgba(16,185,129,.4);animation:availGlow 1.8s ease-in-out infinite}
+@keyframes availGlow{0%,100%{box-shadow:0 0 0 5px rgba(16,185,129,.14),0 10px 24px rgba(16,185,129,.35)}50%{box-shadow:0 0 0 10px rgba(16,185,129,.07),0 10px 30px rgba(16,185,129,.6)}}
+.status-available::before{content:'';width:8px;height:8px;border-radius:50%;background:#fff;animation:pulseDot 1.4s infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}50%{box-shadow:0 0 0 6px rgba(255,255,255,0)}}
+
+.sold-out-text{margin:16px auto 0;width:max-content;padding:8px 18px;background:transparent;border:2px solid rgba(239,68,68,.45);color:var(--red);border-radius:10px;font-size:12px;font-weight:800;text-align:center;letter-spacing:.2em;text-transform:uppercase;transform:rotate(-2deg);transition:transform .3s var(--ease-bounce)}
+.ticket-card.sold-out:hover .sold-out-text{transform:rotate(0deg) scale(1.04)}
+
+.quantity-wrapper{margin:20px -22px 0;padding:20px 22px 0;border-top:2px dashed #cbd5e1;position:relative;display:flex;align-items:center;justify-content:space-between}
+.ticket-card.active .quantity-wrapper::before,.ticket-card.active .quantity-wrapper::after{content:'';position:absolute;top:-16px;width:32px;height:32px;background:var(--bg);border-radius:50%;z-index:10}
+.ticket-card.active .quantity-wrapper::before{left:-16px}
+.ticket-card.active .quantity-wrapper::after{right:-16px}
+
+.quantity-label{font-size:13px;font-weight:600;color:var(--text-soft)}
+.quantity-controls{display:flex;align-items:center;gap:10px}
+.qty-btn{width:36px;height:36px;border-radius:12px;border:none;background:var(--blue-light);color:var(--blue);cursor:pointer;display:grid;place-items:center;transition:all .2s var(--ease-bounce)}
+.qty-btn:hover:not(:disabled){background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;transform:scale(1.08);box-shadow:0 6px 14px rgba(79,70,229,.35)}
+.qty-btn:active:not(:disabled){transform:scale(.94)}
+.qty-btn:disabled{opacity:.35;cursor:not-allowed}
+.qty-btn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.qty-btn svg{width:16px;height:16px}
+.qty-number{min-width:36px;text-align:center;font-size:18px;font-weight:800;color:var(--text)}
+.qty-number.pop{animation:qtyPop .3s var(--ease-bounce)}
+@keyframes qtyPop{0%{transform:scale(1)}50%{transform:scale(1.35);color:var(--blue)}100%{transform:scale(1)}}
+
+.bottom{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(920px,100%);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-top:1px solid rgba(226,232,240,.6);padding:14px 38px max(18px,env(safe-area-inset-bottom));z-index:50;box-shadow:0 -8px 32px rgba(15,23,42,.08)}
+.bottom::before{content:'';position:absolute;top:-1px;left:8%;right:8%;height:2px;border-radius:99px;background:linear-gradient(90deg,transparent,rgba(79,70,229,.35),rgba(124,58,237,.35),transparent)}
+.order-line{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:700;color:var(--text-soft);padding:0 4px;margin-bottom:8px;opacity:0;transform:translateY(4px);transition:all .3s var(--ease)}
+.order-line.show{opacity:1;transform:none}
+.order-line .ol-tag{background:var(--blue-light);color:var(--blue-deep);font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;margin-right:8px}
+.order-line .ol-total{color:var(--blue-deep);font-weight:800;font-size:14px}
+.checkout-btn{width:100%;height:52px;border:0;border-radius:14px;background:#e2e8f0;color:#94a3b8;font-size:17px;font-weight:800;cursor:not-allowed;position:relative;overflow:hidden;transition:all .25s var(--ease);font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px}
+.checkout-btn.active{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);color:#fff;cursor:pointer;box-shadow:0 12px 28px rgba(79,70,229,.35),inset 0 1px 0 rgba(255,255,255,.2)}
+.checkout-btn.active::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);transition:left .6s var(--ease)}
+.checkout-btn.active:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(79,70,229,.45),inset 0 1px 0 rgba(255,255,255,.2)}
+.checkout-btn.active:hover::before{left:100%}
+.checkout-btn.active:active{transform:translateY(0) scale(.99)}
+.checkout-btn.active:focus-visible{outline:3px solid rgba(79,70,229,.4);outline-offset:3px}
+.checkout-btn svg{width:18px;height:18px}
+
+.toast{position:fixed;left:50%;bottom:calc(130px + env(safe-area-inset-bottom));transform:translate(-50%,20px) scale(.9);background:linear-gradient(135deg,var(--red-deep),var(--red));color:#fff;padding:12px 22px;border-radius:12px;font-size:14px;font-weight:700;z-index:60;opacity:0;pointer-events:none;transition:all .35s var(--ease-bounce);box-shadow:0 12px 28px rgba(220,38,38,.4);display:flex;align-items:center;gap:8px;max-width:calc(100% - 32px);text-align:center}
+.toast svg{width:16px;height:16px;flex:none}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:600px){
+  body::before,body::after{display:none}
+  .topbar{height:72px;padding:0 18px;gap:14px}
+  .topbar h1{font-size:20px}
+  .back{width:40px;height:40px;border-radius:12px}
+  .ver-chip{padding:5px 11px;font-size:10px}
+  .fomo-banner{top:72px;font-size:13px;padding:10px 16px}
+  .coupon{margin:16px 18px -2px;padding:11px 14px;font-size:12px}
+  .hero-pass{margin:16px 18px 4px;padding:22px 18px 0;border-radius:18px}
+  .hero-eyebrow{font-size:10px;letter-spacing:.22em}
+  .slip-chip{padding:9px 14px;border-width:2px;box-shadow:0 0 0 3px rgba(251,191,36,.25),0 10px 22px rgba(0,0,0,.4),0 0 26px rgba(245,158,11,.5)}
+  .price-burst{padding:7px 12px}
+  .hero-meta{font-size:10.5px;letter-spacing:.1em;gap:8px}
+  .barcode{height:24px;margin-top:16px}
+  .stub-cut::before{left:-30px}
+  .stub-cut::after{right:-30px}
+  .ticker{padding:11px 0}
+  .info-box{margin:18px 18px 0;padding:12px 14px;gap:10px;font-size:12px}
+  .ticket-zone{padding:0 18px 10px}
+  .ticket-list{gap:14px}
+  .ticket-card{padding:16px}
+  .ticket-info h3{font-size:16px}
+  .ticket-card.active .ticket-price b{font-size:18px}
+  .status-available{font-size:12px;padding:8px 14px}
+  .sold-out-text{margin-top:12px;padding:7px 14px;font-size:11px}
+  .quantity-wrapper{margin:16px -16px 0;padding:16px 16px 0}
+  .ticket-card.active .quantity-wrapper::before,.ticket-card.active .quantity-wrapper::after{top:-14px;width:28px;height:28px}
+  .ticket-card.active .quantity-wrapper::before{left:-14px}
+  .ticket-card.active .quantity-wrapper::after{right:-14px}
+  .bottom{padding:12px 18px}
+  .checkout-btn{height:48px;font-size:16px}
+  .order-line{font-size:11.5px;margin-bottom:6px}
+  .order-line .ol-total{font-size:13px}
+  .toast{bottom:calc(112px + env(safe-area-inset-bottom));font-size:13px;padding:10px 18px}
+  .app{padding-bottom:150px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  body::before,body::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="topbar">
+    <button class="back" onclick="history.back()" aria-label="Kembali ke halaman sebelumnya">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="22" height="22" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </button>
+    <h1>Pilih Tiket</h1>
+    <span class="ver-chip" aria-hidden="true">V.10.0</span>
+  </header>
+
+  <div class="fomo-banner" role="alert" aria-live="assertive">
+    <div class="fomo-shine" aria-hidden="true"></div>
+    <span class="fomo-icon" aria-hidden="true">⚠️</span>
+    <span class="fomo-text">Tiket Tersisa 9 Lagi</span>
+    <span class="fomo-icon" aria-hidden="true">⚠️</span>
+  </div>
+
+  <div class="coupon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12V8H4v4M20 12v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4M20 12h-4a2 2 0 0 0 0 4h4"/></svg>
+    Punya kode kupon? Masukkan <a class="coupon-link" href="#">disini</a>
+  </div>
+
+  <section class="hero-pass" aria-label="Tiket COMMVAGANZA 10.0">
+    <div class="hero-eyebrow">Picnic Music Festival</div>
+    <div class="mega-wrap">
+      <span class="mega">TICKETS</span>
+      <span class="slip-chip" aria-hidden="true">🎟 ADMIT ONE</span>
+    </div>
+    <div class="hero-row">
+      <div class="price-burst" aria-label="Harga tiket Rp 200 per orang">
+        <b>Rp 200</b>
+        <small>/Orang</small>
+      </div>
+      <div class="hero-meta">
+        <span>12.09.2026</span><span class="dot" aria-hidden="true">✦</span>
+        <span>Bandar Lampung</span><span class="dot" aria-hidden="true">✦</span>
+        <span>14:00 WIB</span>
+      </div>
+    </div>
+    <div class="barcode" aria-hidden="true"></div>
+    <div class="stub-cut" aria-hidden="true"></div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-group">
+          <span>🎟 Tickets</span><span class="sep">✦</span>
+          <span>Rp 200/Orang</span><span class="sep">✦</span>
+          <span>Available Now</span><span class="sep">✦</span>
+          <span>Grab Yours</span><span class="sep">✦</span>
+        </div>
+        <div class="ticker-group">
+          <span>🎟 Tickets</span><span class="sep">✦</span>
+          <span>Rp 200/Orang</span><span class="sep">✦</span>
+          <span>Available Now</span><span class="sep">✦</span>
+          <span>Grab Yours</span><span class="sep">✦</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="info-box reveal">
+    <div class="info-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+    <div>Per akun hanya bisa membeli maksimal 5 tiket.</div>
+  </div>
+
+  <div class="ticket-zone">
+    <div class="ghost" aria-hidden="true">TICKETS</div>
+    <section class="ticket-list">
+      <article class="ticket-card sold-out reveal" style="transition-delay:60ms">
+        <div class="ticket-header">
+          <div class="ticket-info">
+            <h3>Earlybird</h3>
+            <div class="ticket-price">Rp 90.000</div>
+          </div>
+          <div class="status-badge status-sold">Sold Out</div>
+        </div>
+        <div class="sold-out-text">Sold Out!!!</div>
+      </article>
+
+      <article class="ticket-card sold-out reveal" style="transition-delay:120ms">
+        <div class="ticket-header">
+          <div class="ticket-info">
+            <h3>Presale 1</h3>
+            <div class="ticket-price">Rp 130.000</div>
+          </div>
+          <div class="status-badge status-sold">Sold Out</div>
+        </div>
+      </article>
+
+      <article class="ticket-card sold-out reveal" style="transition-delay:180ms">
+        <div class="ticket-header">
+          <div class="ticket-info">
+            <h3>Presale 2</h3>
+            <div class="ticket-price">Rp 149.000</div>
+          </div>
+          <div class="status-badge status-sold">Sold Out</div>
+        </div>
+      </article>
+
+      <article class="ticket-card sold-out reveal" style="transition-delay:240ms">
+        <div class="ticket-header">
+          <div class="ticket-info">
+            <h3>Normal Sale</h3>
+            <div class="ticket-price">Rp 169.000</div>
+          </div>
+          <div class="status-badge status-sold">Sold Out</div>
+        </div>
+      </article>
+
+      <article class="ticket-card active reveal" id="mainTicketCard" style="transition-delay:300ms">
+        <div class="ticket-header">
+          <div class="ticket-info">
+            <h3>TICKET NYELIP</h3>
+            <div class="ticket-price" aria-label="Harga Rp 200.000 per orang">
+              <b>Rp 200.000</b>
+              <small>/Orang</small>
+            </div>
+          </div>
+          <div class="status-badge status-available">Available</div>
+        </div>
+        <div class="quantity-wrapper">
+          <div class="quantity-label">Jumlah Tiket</div>
+          <div class="quantity-controls">
+            <button type="button" class="qty-btn" id="minusBtn" aria-label="Kurangi tiket" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg>
+            </button>
+            <div class="qty-number" id="jumlahTiket">0</div>
+            <button type="button" class="qty-btn" id="plusBtn" aria-label="Tambah tiket">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+
+</div>
+
+<div class="bottom">
+  <div class="order-line" id="orderLine">
+    <span><span class="ol-tag">Normal Sale 2</span>Subtotal</span>
+    <span class="ol-total" id="orderTotal">Rp 0</span>
+  </div>
+  <button type="button" id="checkoutButton" class="checkout-btn" disabled>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    Checkout
+  </button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  Maksimal pembelian adalah 5 tiket.
+</div>
+
+<script>
+let jumlahTiket=0;
+const maksimalTiket=5;
+const HARGA_TIKET=200;
+const jumlahElement=document.getElementById("jumlahTiket");
+const checkoutButton=document.getElementById("checkoutButton");
+const minusBtn=document.getElementById("minusBtn");
+const plusBtn=document.getElementById("plusBtn");
+const toast=document.getElementById("toast");
+const orderLine=document.getElementById("orderLine");
+const orderTotal=document.getElementById("orderTotal");
+let toastTimer;
+
+function showToast(){
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove("show"),2200);
+}
+
+plusBtn.addEventListener("click",()=>{
+  if(jumlahTiket<maksimalTiket){
+    jumlahTiket++;
+    updateTampilan();
+  } else {
+    showToast();
+  }
+});
+
+minusBtn.addEventListener("click",()=>{
+  if(jumlahTiket>0){
+    jumlahTiket--;
+    updateTampilan();
+  }
+});
+
+function updateTampilan(){
+  jumlahElement.textContent=jumlahTiket;
+  jumlahElement.classList.remove("pop");
+  void jumlahElement.offsetWidth;
+  jumlahElement.classList.add("pop");
+  minusBtn.disabled=jumlahTiket===0;
+  plusBtn.disabled=jumlahTiket===maksimalTiket;
+  checkoutButton.classList.toggle("active",jumlahTiket>=1);
+  checkoutButton.disabled=jumlahTiket<1;
+  orderTotal.textContent="Rp "+(jumlahTiket*HARGA_TIKET).toLocaleString("id-ID");
+  orderLine.classList.toggle("show",jumlahTiket>=1);
+}
+
+checkoutButton.addEventListener("click",()=>{
+  if(jumlahTiket<1) return;
+  localStorage.setItem("jumlahTiket",jumlahTiket);
+  localStorage.setItem("kategoriTiket","Normal Sale 2");
+  localStorage.setItem("hargaTiket",String(HARGA_TIKET));
+  window.location.href="form.html";
+});
+
+const revealObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal:not(.visible)').forEach(el=>revealObserver.observe(el));
+</script>
+</body>
+</html>
